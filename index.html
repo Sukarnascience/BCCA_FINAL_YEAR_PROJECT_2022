@@ -42,14 +42,14 @@
             <div>Sing Up / Login</div>
             <form>
                 <div class="inputs">
-                    <input class="inputlabel" type="text" placeholder="Name"></input>
-                    <input class="inputlabel" type="email" placeholder="Email"></input>
-                    <input class="inputlabel" type="number" placeholder="Phone No"></input>
-                    <input class="inputlabel" type="number" placeholder="Adhar No"></input>
-                    <input class="inputlabel" type="text" placeholder="Address"></input>
-                    <input class="inputlabel" type="password" placeholder="Password"></input>
-                    <input class="inputlabel" type="password" placeholder="Re-Enter Password"></input>
-                    <button class="inputlabel button1" id="singup">Sing Up</button>
+                    <input class="inputlabel" type="text" placeholder="Name" id="name"></input>
+                    <input class="inputlabel" type="email" placeholder="Email" id="email"></input>
+                    <input class="inputlabel" type="number" placeholder="Phone No" id="phoneNo"></input>
+                    <input class="inputlabel" type="number" placeholder="Adhar No" id="adharNo"></input>
+                    <input class="inputlabel" type="text" placeholder="Address" id="address"></input>
+                    <input class="inputlabel" type="password" placeholder="Password" id="password"></input>
+                    <input class="inputlabel" type="password" placeholder="Re-Enter Password" id="rePassword"></input>
+                    <button class="inputlabel button1" id="singup" onclick="saveMyDataLocally()">Sing Up</button>
                     <button class="inputlabel button1" id="login">Login</button>
                 </div>
             </form>
@@ -98,5 +98,11 @@
     </div>
     <script src="js/idea.js"></script>
 </body>
+
+    <!--- NEW PART TO DUMP DATA :Sukarna Jana's Code Starts from here:--->
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-database.js"></script>
+    <script src="js/loginDataUpload.js"></script>
+    <!--- END's here -->
 
 </html>
