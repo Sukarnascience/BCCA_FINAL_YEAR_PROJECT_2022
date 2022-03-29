@@ -4,6 +4,7 @@
  * Author: Sukarna Jana
  */
 
+import firebase from "firebase/app";
 
 var firebaseConfig = {
     apiKey: "AIzaSyARGlPoaDtpoeh33sEnSfkVxW_z5YaCq5M",
@@ -14,13 +15,12 @@ var firebaseConfig = {
     appId: "1:90129283592:web:ab9feddaf48f4336372fbd",
     measurementId: "G-T794V880P0"
 };
-
 firebase.initializeApp(firebaseConfig);
-
-var database = firebase.database()
+var database = firebase.database();
 
 function saveMyDataLocally(){
-    var name = document.getElementById("name").value
+
+    var name = document.getElementById("username").value
     var email = document.getElementById("email").value
     var phoneNo = document.getElementById("phoneNo").value
     var adharNo = document.getElementById("adharNo").value
@@ -32,12 +32,18 @@ function saveMyDataLocally(){
         alert("Please check your Password");
     }
 
-    database.ref('users/'+adharNo).set({
+    alert("Name :"+name+"\nEmail:"+email+"\nPhone No:"+phoneNo+"\nAdhar No:"+adharNo+"\nAddress:"+address);
+
+    //let userRef = this.database.ref('users/'+adharNo).set({
+    this.database.ref('users/'+adharNo).set({
+    //var ref = firebase.database().ref('users/'+adharNo).set({
         name : name,
         email : email,
         phoneNo : phoneNo,
         address : address,
         password : password
     })
-
+    //console.log(ref);
+    alert("Account Created Successfully");
+    
 }
